@@ -5,8 +5,10 @@ namespace _26_04.Controllers
 
 {
     [ApiController]
+    [Route("api/cities")]
     public class CitiesController : ControllerBase
     {
+        [HttpGet]
         public JsonResult GetResult()
         {
             return new JsonResult(
