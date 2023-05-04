@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
@@ -40,11 +43,13 @@ namespace _26_04.Controllers
             }
 
         }
+
         public AuthenticationController(IConfiguration configuration)
         {
             _configuration = configuration ??
                 throw new ArgumentNullException(nameof(configuration));
         }
+
         [HttpPost("authenticate")]
         public ActionResult<string> Authenticate(
             AuthenticationRequestBody authenticationRequestBody)
@@ -87,11 +92,12 @@ namespace _26_04.Controllers
 
         private CityInfoUser ValidateUserCredentials(string? userName, string? password)
         {
+            // we don't have a user DB or table.  If you have, check the passed-through
             // username/password against what's stored in the database.
             //
             // For demo purposes, we assume the credentials are valid
 
-            // return a new CityInfoUser 
+            // return a new CityInfoUser (values would normally come from your user DB/table)
             return new CityInfoUser(
                 1,
                 userName ?? "",
@@ -102,4 +108,3 @@ namespace _26_04.Controllers
         }
     }
 }
-
