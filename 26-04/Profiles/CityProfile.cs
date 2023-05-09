@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 
-namespace CityInfo.API.Profiles
+namespace _26_04.Profiles
+
 {
     public class CityProfile : Profile
     {
