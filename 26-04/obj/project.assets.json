@@ -230,11 +230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KarinaGwalani\\Source\\Repos\\26-04-abjima\\26-04\\26-04.csproj",
+      "projectUniqueName": "C:\\Users\\KarinaGwalani\\Documents\\GitHub\\26-04-abjima\\26-04\\26-04.csproj",
       "projectName": "26-04",
-      "projectPath": "C:\\Users\\KarinaGwalani\\Source\\Repos\\26-04-abjima\\26-04\\26-04.csproj",
+      "projectPath": "C:\\Users\\KarinaGwalani\\Documents\\GitHub\\26-04-abjima\\26-04\\26-04.csproj",
       "packagesPath": "C:\\Users\\KarinaGwalani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KarinaGwalani\\Source\\Repos\\26-04-abjima\\26-04\\obj\\",
+      "outputPath": "C:\\Users\\KarinaGwalani\\Documents\\GitHub\\26-04-abjima\\26-04\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
