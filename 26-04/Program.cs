@@ -1,11 +1,16 @@
 using Microsoft.AspNetCore.StaticFiles;
 
 var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.File("logs/cityinfo.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
 
 // Add services to the container.
 
-builder.Services.AddControllers(options => { 
-    options.ReturnHttpNotAcceptable = true;
+builder.Services.AddControllers(options => { options.ReturnHttpNotAcceptable = true;
 }).AddXmlDataContractSerializerFormatters();//for formatting xml for input and output
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -24,8 +29,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer(options =>
+builder.Services.AddAuthentication("Bearer"). AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new()
         {
