@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace _26_04.Migrations
+
 namespace _26_04.Migrations
 {
     public partial class DataSeed : Migration
